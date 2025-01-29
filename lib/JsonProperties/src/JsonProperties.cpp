@@ -360,7 +360,7 @@ bool JsonProperties::initBool(const char* key, bool defaultValue) {
  * @return int The value of the property.
  */
 int JsonProperties::getInt(const char* key) {
-  return this->properties[key];
+  return this->properties[key].as<int>();
 }
 
 /**
@@ -372,7 +372,7 @@ int JsonProperties::getInt(const char* key) {
  * @return long The value of the property.
  */
 long JsonProperties::getLong(const char* key) {
-  return this->properties[key];
+  return this->properties[key].as<long>();
 }
 
 /**
@@ -384,7 +384,7 @@ long JsonProperties::getLong(const char* key) {
  * @return float The value of the property.
  */
 float JsonProperties::getFloat(const char* key) {
-  return this->properties[key];
+  return this->properties[key].as<float>();
 }
 
 /**
@@ -396,7 +396,7 @@ float JsonProperties::getFloat(const char* key) {
  * @return double The value of the property.
  */
 double JsonProperties::getDouble(const char* key) {
-  return this->properties[key];
+  return this->properties[key].as<double>();
 }
 
 /**
@@ -598,7 +598,7 @@ int JsonProperties::getIntMin(const char* key) {
     return INT_MIN;
   }
 
-  return this->meta[key]["min"];
+  return this->meta[key]["min"].as<int>();
 }
 
 /**
@@ -615,7 +615,7 @@ int JsonProperties::getIntMax(const char* key) {
     return INT_MAX;
   }
 
-  return this->meta[key]["max"];
+  return this->meta[key]["max"].as<int>();
 }
 
 /**
@@ -632,7 +632,7 @@ long JsonProperties::getLongMin(const char* key) {
     return LONG_MIN;
   }
 
-  return this->meta[key]["min"];
+  return this->meta[key]["min"].as<long>();
 }
 
 /**
@@ -650,7 +650,7 @@ long JsonProperties::getLongMax(const char* key) {
     return LONG_MAX;
   }
 
-  return this->meta[key]["max"];
+  return this->meta[key]["max"].as<long>();
 }
 
 /**
@@ -667,7 +667,7 @@ float JsonProperties::getFloatMin(const char* key) {
     return -__FLT_MAX__;
   }
 
-  return this->meta[key]["min"];
+  return this->meta[key]["min"].as<float>();
 }
 
 /**
@@ -684,7 +684,7 @@ float JsonProperties::getFloatMax(const char* key) {
     return __FLT_MAX__;
   }
 
-  return this->meta[key]["max"];
+  return this->meta[key]["max"].as<float>();
 }
 
 /**
@@ -701,7 +701,7 @@ double JsonProperties::getDoubleMin(const char* key) {
     return -__DBL_MAX__;
   }
 
-  return this->meta[key]["min"];
+  return this->meta[key]["min"].as<double>();
 }
 
 /**
@@ -718,7 +718,7 @@ double JsonProperties::getDoubleMax(const char* key) {
     return __DBL_MAX__;
   }
 
-  return this->meta[key]["max"];
+  return this->meta[key]["max"].as<double>();
 }
 
 /**

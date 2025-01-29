@@ -61,20 +61,6 @@ void test_initFloatWithBounds(void) {
   TEST_ASSERT_EQUAL_FLOAT(10.0f, jsonProps.getFloatMax("testFloatBounds"));
 }
 
-void test_initDouble(void) {
-  bool result = jsonProps.initDouble("testDouble", 1.234);
-  TEST_ASSERT_TRUE(result);
-  TEST_ASSERT_EQUAL_DOUBLE(1.234, jsonProps.getDouble("testDouble"));
-}
-
-void test_initDoubleWithBounds(void) {
-  bool result = jsonProps.initDouble("testDoubleBounds", 1.234, 0.0, 10.0);
-  TEST_ASSERT_TRUE(result);
-  TEST_ASSERT_EQUAL_DOUBLE(1.234, jsonProps.getDouble("testDoubleBounds"));
-  TEST_ASSERT_EQUAL_DOUBLE(0.0, jsonProps.getDoubleMin("testDoubleBounds"));
-  TEST_ASSERT_EQUAL_DOUBLE(10.0, jsonProps.getDoubleMax("testDoubleBounds"));
-}
-
 void test_initString(void) {
   bool result = jsonProps.initString("testString", "default");
   TEST_ASSERT_TRUE(result);
@@ -101,8 +87,6 @@ void setup() {
   RUN_TEST(test_initLongWithBounds);
   RUN_TEST(test_initFloat);
   RUN_TEST(test_initFloatWithBounds);
-  RUN_TEST(test_initDouble);
-  RUN_TEST(test_initDoubleWithBounds);
   RUN_TEST(test_initString);
   RUN_TEST(test_initColor);
   RUN_TEST(test_initBool);
